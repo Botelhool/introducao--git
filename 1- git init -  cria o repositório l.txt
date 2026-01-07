@@ -12,3 +12,7 @@
 *cirando uma nova branch 
 
 git checkout -b dev 
+
+trocar de branch 
+
+git checkout nome_da_branch 
