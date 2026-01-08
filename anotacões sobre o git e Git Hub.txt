@@ -1,0 +1,121 @@
+git e Git Hub
+
+O versionamento e o processo de controlar e gerenciar diferente iterações ou versões de um projeto ao longo do tempo. Isso e feito através de sistemas de controle de versão que registram e armazenam as alterações feitas no código -fonte, permitindo o acompanhamento do histórico de desenvolvimento e a garantia de integridade do projeto 
+
+
+O versionamento pode ser feito não só de código, pode ser feito de outros tipos de arquivos inclusive pastas 
+
+A principal ferramenta usada para versionamento e o Git 
+
+
+Commit nada mais que um registro de alterações feitas nos arquivos em um determinado momento do projeto (versionamento). São varias fases do programa que ficao salvas e podemos escolher e voltar na melhor versão. Como se fosse um checkpoint. 
+
+Cada commit pertence a uma branch 
+
+Branch
+A branch são ramificações, que funcionam de forma independente e isolada , você pode fazer alterações sem alterar o código principal. 
+Uma nova branch ela e criada a partir de uma branch principal, uma brach que vem configurada por padrão, chamada de main. 
+
+Na main e aramazenada todas versões principais e definitivas. 
+
+Analogia : a main e como se fosse o tronco de uma arvore, que e resistente e constante, as branch criadas a partir da main são como os galhos ramificações, que se quebrarem o tronco continua intacto. Entao qualquer alteração feita na branch criada não alterara a versão armazenada na main 
+
+
+fluxo de versionamento 
+Nosso código, salvo no nosso diretório >> git add >> e salvo em uma área do git chamada de staging área >> git commit  >> Feito commit ai sim e adicionado ao repositório. Todo esse processo e feito no meu repositório local 
+
+Um repositório e um local de armazenamento de recursos de forma centralizada. Esse repositório pode ser local ou remoto. O git hub, por exemplo e um repositório remoto 
+
+como fazer o versionamento ? 
+
+1 - criar uma pasta >> Clique com o botão direito do mouse e selecione a opção open git bash here >> use o comando git init.
+
+2- abra o git hub e crie um novo repositório >> ira abrir uma opção para adicionar um repositório local existente ao remoto :
+
+git remote add origin https://github.com/Botelhool/introducao--git.git
+git branch -M main
+git push -u origin main
+
+
+
+
+comandos do git 
+
+git init - cria o repositório local 
+
+git add . ou git add nome_do_arquivo - Adiciona alterações ao índice. obs : não e o nome do arquivo e o nome do índice 
+
+git commit -m "Sua mensagem de commit" - Cria um commit com uma mensagem descritiva
+
+git branch -M main - Renomeia a branch principal (opcional)
+
+git remote add origin URL_DO_REPOSITORIO - Adiciona o repositório remoto como origem
+
+git push -u origin main ou git push -u origin nome_da_sua_branch -  Envia o código para o GitHub
+
+git checkout - b nome_da_branch - cria uma nova branch 
+ 
+git checkout nome_da_branch - Sem o parâmetro b consio fazer a troca de branch 
+
+git log - mostra todo o registro feito dentro da branch 
+
+git merge - traz todo conteúdo de uma branch para outra branch, como se fosse uma fusão. 
+
+git clone - ele clona o repositório remoto para o meu repositório local 
+
+git config --list - Para listar todas as configurações do Git, digite o comando 
+
+obs: tomar cuidado na hora de cirar branch para criar uma brach dentro de outra branch 
+
+git status - mo m
+
+git diff - Ele compara duas versões do seu projeto e destaca exatamente o que mudou (o que foi adicionado, removido ou modificado).
+
+git remote add origin seu link do GitHub  - Conecta o repositório local e o remoto 
+
+git remote -v - confirma que a conexão entre o repositório local e remoto deu  certo 
+
+
+
+
+
+
+
+O git hub e um sistema de versionamento distribuído, cada desenvolvedor tem um repositório local que e uma copia do repositório remoto. 
+
+Em um sistema de versionamento centralizado, cada desenvolvedor tem um repositório, que aponta para o repositório central 
+
+Mesmo que um desenvolvedor destrua seu repositório local, ele pode simplesmente clonar (copiar) o de outra pessoa ou do repositório remoto e começar de novo.
+
+
+
+O git hub e um sistema baseado em nuvem que hospeda o sistema de controle de versionamento. 
+
+lembre se que o git e baseado no Linux então comandos de navegação funcionaram normalmente no gitbash
+
+O git não versiona pastas vazias 
+
+Cada commit feito e gero um Hash. Esse hash e gerado pelo algoritmo de criptografia SHA-1 e funciona como uma impressão digital 
+
+
+
+ Entendendo o fluxo de trabalho do Git
+
+Um repositório local no Git é composto por três “árvores” principais, que representam estágios diferentes no fluxo de trabalho:
+
+Working Directory (Diretório de Trabalho): E a pasta onde voce criou o repositório local. Nela ficam todos os projetos, independente de estarem versionados ou não 
+
+Index (Índice) ou Staging Area : E uma área temporária que armazena as alterações desde o ultimo commit. Ao adicionar com o git add ., voce esta avisando para o git que essas mudanças devem ser preparadas para o próximo commit 
+
+HEAD: é um ponteiro que sempre aponta para o último commit realizado no repositório local. Quando você executa git commit, o HEAD passa a apontar para esse novo commit, tornando-o o mais recente da linha do tempo.
+
+O ~1 é uma sintaxe de referência relativa que significa “o commit pai do HEAD atual”.
+
+HEAD~1 → um commit antes do HEAD atual (ou seja, o commit imediatamente anterior).
+HEAD~2 → dois commits antes do HEAD atual.
+E assim por diante (HEAD~n → n commits antes do HEAD).
+
+Observações importantes
+HEAD~1 é útil em comandos como git reset ou git checkout para voltar temporariamente ou desfazer commits recentes.
+Sempre tenha cuidado: se estiver trabalhando em uma branch compartilhada, usar git reset com HEAD~1 altera o histórico, podendo causar conflitos com outros colaboradores.
+Para desfazer commits sem modificar o histórico, prefira git revert ao invés de git reset.
